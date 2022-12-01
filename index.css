@@ -2,8 +2,8 @@ main {
   height: 800px;
   background-image: url("/image/farm.jpg");
   background-size: cover;
-  opacity: 0.9;
 }
+
 
 #side_bar{
   display: grid;
@@ -28,6 +28,7 @@ main {
   box-shadow: 2px 4px 8px rgb(68, 67, 67);
   border-radius: 10px;
   background: linear-gradient(45deg, rgba(155, 224, 253, 0.7), rgba(67, 127, 153, 0.7));
+  margin-left: 0;
 
   
 }
@@ -37,9 +38,56 @@ main {
 }
 
 .sidebar_{
-  margin-top: 2%;
-  background-color: aliceblue;
+  margin: 3%;
+  height: 35px;
+  overflow-y:hidden;
+  padding: 5px;
+  background: linear-gradient(45deg, rgb(255, 255, 0), rgb(145, 145, 22));
+  border-radius: 5px;
 }
+
+
+
+#sidebarid{
+  list-style: none;
+  padding: 5px;
+}
+
+#sidebarid div{
+  text-align: center;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: rgba(100, 191, 233, 0.3);
+  margin-top: 10px;
+  height: 15rem;
+  width: 100%;
+  overflow-y: scroll;
+  
+}
+
+#sidebarid h3 a{
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  height: 10px;
+  text-overflow: clip ellipsis;
+  font-size: 25px;
+  font-family: 'Roboto Condensed', sans-serif;
+  width: 90%;
+}
+
+.sidebar_ a{
+  font-size: 17px;
+  font-family: 'Barlow', sans-serif;
+  border-radius: 8px;
+  padding: 5px;
+  /* background-color: yellow; */
+ 
+  color: black;
+  text-decoration: none;
+  font-weight: 900;
+}
+
 
 /* //// */
 
@@ -51,17 +99,28 @@ main {
 
 #hero-content p{
 font-family: 'Roboto Condensed', sans-serif;
+font-size: 19px;
+color: black;
 }
 
 #hero h1{
 font-family: 'Playfair Display', sans-serif;
+color: black;
+text-shadow: 1.5px 1.5px 2px black;
+
 }
 
 #hero a{
-  font-family: 'Barlow', sans-serif;
-  padding: 5px;
-  margin-top: 30px;
+  padding: 10px;
   font-size: 15px;
-  background: yellow;
+  font-family: 'Barlow', sans-serif;
+  background: linear-gradient(45deg, rgb(255, 255, 0), rgb(145, 145, 22));
   border-radius: 8px;
+  color: black;
+  text-decoration: none;
+  font-weight: 900;
+  width: 100px;
+  
 }
+
+
