@@ -1,0 +1,23 @@
+#trac{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.card{
+    margin: 50px;
+}
+
+.card-img-top{
+    height: 250px;
+    background-size: cover;
+}
+
+.card-body{
+    background: linear-gradient(69deg, rgba(155, 224, 253, 0.7), rgba(93, 152, 178, 0.7));
+}
+
+.btn{
+    background: linear-gradient(45deg, rgb(255, 255, 0), rgb(145, 145, 22));
+    text-align: center;
+}
