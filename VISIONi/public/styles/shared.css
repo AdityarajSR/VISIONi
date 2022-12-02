@@ -5,6 +5,7 @@
     color: white;
     text-shadow: rgb(230, 110, 19) 1px 0 10px;
     padding-right: 28rem;
+    width: 2%;
 }
 
 .nav-link {
@@ -44,11 +45,13 @@
 
 .navbar{
     padding:0px;
+    width: 100%;
 }
 
 .container-fluid{
     background-color: black;
     margin: 0;
+    width: 100%;
 }
 
 .dropdown-menu{

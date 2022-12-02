@@ -1,7 +1,7 @@
 main {
   height: 800px;
-  background-image: url("/image/farm.jpg");
-  background-size: cover;
+  background-image: url("/image/background/farm.jpg");
+  width: 100%;
   opacity: 0.9;
 }
 
