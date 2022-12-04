@@ -187,37 +187,40 @@
             </div>
           </div>
         </section>
-        <section class="cardcls">
-          <div class="card" style="width: 18rem">
-            <img
-              src="/image/tractors/Preet.jpg"
-              class="card-img-top"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">Preet 3549</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <section class="preview">
-                <a href="#" class="btn btn-primary">Official Website</a>
-                <a href="#" class="btn btn-primary">Preview</a>
-              </section>
+        <!-- /////////////////////////////////////////////////////////////////////////////////// -->
+        <% for(const mytracis of mytrac){ %> 
+          <section class="cardcls">
+            <div class="card" style="width: 18rem">
+              <img
+                src="<%= mytracis.tracimg%> "
+                class="card-img-top"
+                alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title"><%= mytracis.tracname %> </h5>
+                  <p class="card-text">
+                    <%= mytracis.tracdescr %> 
+                  </p>
+                  <section class="preview">
+                    <a href="<%= mytracis.tracurl %> " class="btn btn-primary">Official Website</a>
+                  <a href="#" class="btn btn-primary">Preview</a>
+                </section>
+              </div>
             </div>
-          </div>
-        </section>
-
-        <section class="cardcls">
-          <div class="card" style="width: 18rem">
-            <div class="card-body">
-              <h5 class="card-title">Add Your Prefernces</h5>
-              <section class="preview">
-                <a href="/addtractor" class="btn btn-primary">Click Here</a>
-              </section>
+          </section>
+          <% } %> 
+          <!-- /////////////////////////////////////////////////////////////////////////////////// -->
+          <section class="cardcls">
+            <div class="card" style="width: 18rem">
+              <div class="card-body">
+                <h5 class="card-title">Add Your Prefernces</h5>
+                <section class="preview">
+                  <a href="/addtractor" class="btn btn-primary">Click Here</a>
+                </section>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+          
 
       </section>
     </main>

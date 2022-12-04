@@ -23,7 +23,13 @@ app.get('/equipments', function(req, res){
 });
 
 app.get('/tractors', function(req, res){
-    res.render('tractors');
+
+    const filePath = path.join(__dirname, 'data', 'tractors.json');
+    const tractordata = fs.readFileSync(filePath);
+    const storeddata = JSON.parse(tractordata);
+
+
+    res.render('tractors', {mytrac: storeddata});
 })
 
 app.get('/addtractor', function(req, res){
