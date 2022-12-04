@@ -1,0 +1,30 @@
+#section1 {
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.9),
+    rgba(17, 149, 232, 0.9)
+  );
+  text-align: center;
+  height: 500px;
+}
+
+#headin {
+  text-transform: uppercase;
+  font-family: "Playfair Display", serif;
+  padding: 20px;
+  padding-bottom: 5px;
+}
+
+
+#formis {
+  /* box-shadow: 10px 5px 5px rgba(17, 149, 232, 0.9); */
+  color: white;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 20rem;
+  height: 25rem;
+  text-align: center;
+  margin: auto;
+  border: thick double #32a1ce;
+  border-radius: 10px;
+}
