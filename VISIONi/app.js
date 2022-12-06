@@ -1,54 +1,70 @@
-const fs = require('fs');
+const fs = require("fs");
 
-const path = require('path');
+const path = require("path");
 
-const express = require('express');
+const express = require("express");
 
 const app = express();
 
+const uuid = require("uuid");
+
 app.set("views", path.join(__dirname, "views"));
 
-app.set('view engine', 'ejs');
+app.set("view engine", "ejs");
 
-app.use(express.static('public'));
+app.use(express.static("public"));
 
-app.use(express.urlencoded({extended:false}));
+app.use(express.urlencoded({ extended: false }));
 
-app.get('/', function(req, res){
-    res.render('index');
+app.get("/", function (req, res) {
+  res.render("index");
 });
 
-app.get('/equipments', function(req, res){
-    res.render('equipments');
+app.get("/equipments", function (req, res) {
+  res.render("equipments");
 });
 
-app.get('/tractors', function(req, res){
+app.get("/tractors", function (req, res) {
+  const filePath = path.join(__dirname, "data", "tractors.json");
+  const tractordata = fs.readFileSync(filePath);
+  const storeddata = JSON.parse(tractordata);
 
-    const filePath = path.join(__dirname, 'data', 'tractors.json');
-    const tractordata = fs.readFileSync(filePath);
-    const storeddata = JSON.parse(tractordata);
+  res.render("tractors", { mytrac: storeddata });
+});
 
+app.get("/tractors/:id", function (req, res) {
+  // Each new page will be created automatically
+  const tractorId = req.params.id;
 
-    res.render('tractors', {mytrac: storeddata});
-})
+  const filePath = path.join(__dirname, "data", "tractors.json");
+  const tractordata = fs.readFileSync(filePath);
+  const storeddata = JSON.parse(tractordata);
 
-app.get('/addtractor', function(req, res){
-    res.render('addtractor');
-})
+  for (const tr of storeddata) {
+    if (tr.id === tractorId) {
+      return res.render("tractors-detail", { mytracis: tr, rid: tractorId });
+    }
+  }
+  res.render('404');
+});
 
-app.post('/addtractor', function(req, res){
-    const tractors = req.body;
-    
-    const filePath = path.join(__dirname, 'data', 'tractors.json');
-    const tractordata = fs.readFileSync(filePath);
-    const storeddata = JSON.parse(tractordata);
+app.get("/addtractor", function (req, res) {
+  res.render("addtractor");
+});
 
-    storeddata.push(tractors);
+app.post("/addtractor", function (req, res) {
+  const tractors = req.body;
+  tractors.id = uuid.v4();
 
-    fs.writeFileSync(filePath, JSON.stringify(storeddata));
+  const filePath = path.join(__dirname, "data", "tractors.json");
+  const tractordata = fs.readFileSync(filePath);
+  const storeddata = JSON.parse(tractordata);
 
-    res.redirect('/tractors');
+  storeddata.push(tractors);
 
-})
+  fs.writeFileSync(filePath, JSON.stringify(storeddata));
+
+  res.redirect("/tractors");
+});
 
 app.listen(3000);
