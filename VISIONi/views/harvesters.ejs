@@ -11,16 +11,16 @@
     <main>
       <section id="section1">
         <!-- /////////////////////////////////////////////////////////////////////////////////// -->
-          <% for(const mytracis of mytrac){ %>
-          <%- include('include/dynamictrac', {mytracis : mytracis}) %> 
-          <% } %>
+        <% for(const myharis of myhar) { %>
+          <%- include('include/dynamichar', {myhari : myharis}) %>
+        <% } %>
         <!-- /////////////////////////////////////////////////////////////////////////////////// -->
         <section class="cardcls">
           <div class="card" style="width: 18rem">
             <div class="card-body">
               <h5 class="card-title">Add Your Prefernces</h5>
               <section class="preview">
-                <a href="/addtractor" class="btn btn-primary">Click Here</a>
+                <a href="/addharvester" class="btn btn-primary">Click Here</a>
               </section>
             </div>
           </div>
