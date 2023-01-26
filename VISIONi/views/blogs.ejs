@@ -1,0 +1,26 @@
+<html lang="en">
+  <head>
+    <%- include('include/headdata') %>
+    <link rel="stylesheet" href="/styles/shared.css" />
+  </head>
+
+  <body>
+
+
+<%- include('include/header') %>
+
+    <p><%= initial %></p>
+
+    
+    <% blogpost.forEach(function(post){ %>
+        <h1>  <%= post.title %></h1>
+        <p> 
+            <%= post.content?.substring(0,100) + "...." %>
+            <a href="/blogpost/<%=post._id%>">Read More</a>
+        </p>
+        
+
+    <% }); %>
+
+  </body>
+</html>
