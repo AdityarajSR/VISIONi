@@ -91,10 +91,10 @@ app.post("/compose", function(req, res){
     res.redirect("/blogs");
 })
 // Blog page intialization
-const bloginfo = "Lacus vel facilisis volutpat est velit egestas dui id ornare. Semper auctor neque vitae tempus quam. Sit amet cursus sit amet dictum sit amet justo. Viverra tellus in hac habitasse. Imperdiet proin fermentum leo vel orci porta. Donec ultrices tincidunt arcu non sodales neque sodales ut. Mattis molestie a iaculis at erat pellentesque adipiscing. Magnis dis parturient montes nascetur ridiculus mus mauris vitae ultricies. Adipiscing elit ut aliquam purus sit amet luctus venenatis lectus. Ultrices vitae auctor eu augue ut lectus arcu bibendum at. Odio euismod lacinia at quis risus sed vulputate odio ut. Cursus mattis molestie a iaculis at erat pellentesque adipiscing.";
+const bloginfo = "Welcome to VISIONi, dedicated to helping farmers succeed. We understand the challenges and hard work that goes into running a farm, and we're here to support you every step of the way. Our services range from providing expert advice on sustainable farming practices, to connecting farmers with local markets to sell their produce. We also offer a variety of resources such as crop planning guides, weather forecasts, and access to the latest agricultural technology. Our goal is to empower farmers with the tools and knowledge they need to thrive in their operations. Join our community of farmers today and start reaping the benefits of our resources and support.";
 app.get("/blogs",  function(req, res){
     post.find({},(err,posts) => {
-       console.log(posts.title);
+    //    console.log(posts.title);
         res.render("blogs",{
         initial:bloginfo,
         blogpost:posts
