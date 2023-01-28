@@ -54,6 +54,9 @@ app.post('/addtractor', function(req, res){
 
 
 
+
+
+
 // MONGOOSE SECTION (Linking the data to database)
 
 try {
