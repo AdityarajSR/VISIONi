@@ -11,6 +11,7 @@ const tracroute = require("./routes/tracroute");
 const harroute = require("./routes/harroute");
 
 app.set("views", path.join(__dirname, "views"));
+// console.log(path.join(__dirname, "views"));
 
 app.set("view engine", "ejs");
 
