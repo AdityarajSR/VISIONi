@@ -125,4 +125,13 @@ router.post("/logout", function (req, res) {
   res.redirect('/');
 });
 
+router.get('/blog',(req, res)=>{
+  const articles = [{
+    title: 'Test Article',
+    createdAt: new Date(),
+    description: 'Test Description'
+  }]
+  res.render('blog', {articles: articles});
+})
+
 module.exports = router;
