@@ -6,16 +6,15 @@ const app = express();
 
 const db = require("./data/database");
 
-const uuid = require("uuid");
-
 const session = require("express-session");
 
 const mongodbStore = require('connect-mongodb-session');
 
 const mongoose = require('mongoose');
 
+const methodOverride = require('method-override')
+
 const MongoDBStore = mongodbStore(session);
-const bodyParser = require("body-parser");
 
 const sessionStore = new MongoDBStore({
     uri :'mongodb+srv://CONNECtIt:CONNECtIt@cluster0.jzll7mx.mongodb.net/?retryWrites=true&w=majority',
@@ -23,13 +22,20 @@ const sessionStore = new MongoDBStore({
     collection : 'sessions'
 })
 
-mongoose.set('strictQuery', false);
-// mongoose.connect('mongodb://127.0.0.1:27017/blog');
+
+mongoose.set('strictQuery', true);
+// mongoose.connect('mongodb://127.0.0.1:27017/myblog');
+
+// Isko pehle use karna hai 
+app.use(methodOverride('_method'))
+// Isko upar vale k baad use karna hai 
 
 const defroute = require("./routes/default_routes");
 const tracroute = require("./routes/tracroute");
 const harroute = require("./routes/harroute");
 const demoRoutes = require("./routes/demo");
+const articleRouter = require('./routes/articles');
+const Article = require('./data/article')
 // const articleRoutes = require("./routes/articles")
 
 app.set("views", path.join(__dirname, "views"));
@@ -52,6 +58,7 @@ app.use(demoRoutes);
 app.use("/", defroute);
 app.use("/", tracroute);
 app.use("/", harroute);
+app.use('/articles', articleRouter);
 // app.use("/",articleRoutes);
 
 
@@ -65,12 +72,7 @@ app.use("/", harroute);
 // });
 
 
-
-
-
-
 // MONGOOSE SECTION (Linking the data to database)
-
 try {
   mongouri="mongodb+srv://CONNECtIt:CONNECtIt@cluster0.jzll7mx.mongodb.net/?retryWrites=true&w=majority";
   mongoose.connect( mongouri, ()=>{
@@ -134,6 +136,12 @@ app.get("/blogpost/:Postid" , (req, res) => {
       }
   });
 });
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
 
 
 
