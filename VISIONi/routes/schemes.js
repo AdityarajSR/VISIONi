@@ -1,27 +1,27 @@
 const express = require("express");
-const article = require("./../data/article");
 const router = express.Router();
-const Article = require("./../data/article");
+const article = require("./../data/scheme");
+const Article = require("./../data/scheme");
 
 router.get('/', async (req, res)=>{
     const articles = await Article.find()
-    res.render('articles/index_blog', {articles: articles});
+    res.render('schemes/index_blog', {articles: articles});
 })
 
 router.get("/new", (req, res) => {
-  res.render("articles/new", { article: new Article() });
+  res.render("schemes/new", { article: new Article() });
 });
 
 router.get("/edit/:id", async (req, res) => {
   const article = await Article.findById(req.params.id);
-  res.render("articles/edit", { article: article });
+  res.render("schemes/edit", { article: article });
 });
 
 router.get("/:slug", async (req, res) => {
   // res.send(req.params.id)
   let article = await Article.findOne({ slug: req.params.slug });
   if (article == null) res.redirect("/");
-  res.render("articles/show", { article: article });
+  res.render("schemes/show", { article: article });
 });
 
 router.post(
@@ -44,7 +44,7 @@ router.put(
 
 router.delete("/:id", async (req, res) => {
   await Article.findByIdAndDelete(req.params.id);
-  res.redirect("/articles");
+  res.redirect("/schemes");
 });
 
 function saveArticleAndRedirect(path) {
@@ -55,9 +55,9 @@ function saveArticleAndRedirect(path) {
     article.markdown = req.body.markdown;
     try {
       article = await article.save();
-      res.redirect(`/articles/${article.slug}`);
+      res.redirect(`/schemes/${article.slug}`);
     } catch (e) {
-      res.render(`articles/${path}`, { article: article });
+      res.render(`schemes/${path}`, { article: article });
     }
   };
 }

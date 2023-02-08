@@ -35,6 +35,7 @@ const tracroute = require("./routes/tracroute");
 const harroute = require("./routes/harroute");
 const demoRoutes = require("./routes/demo");
 const articleRouter = require('./routes/articles');
+const schemeRouter = require('./routes/schemes');
 const Article = require('./data/article')
 // const articleRoutes = require("./routes/articles")
 
@@ -59,6 +60,7 @@ app.use("/", defroute);
 app.use("/", tracroute);
 app.use("/", harroute);
 app.use('/articles', articleRouter);
+app.use('/schemes', schemeRouter);
 // app.use("/",articleRoutes);
 
 

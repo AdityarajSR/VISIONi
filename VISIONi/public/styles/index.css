@@ -90,7 +90,7 @@ main {
 
 .sidebar_ a:hover{
   color: black;
-  font-size: 22px;
+  /* font-size: 22px; */
   text-shadow: rgb(230, 110, 19) 1px 0 10px;
 }
 
@@ -173,7 +173,7 @@ main {
 
 .li1 a:hover{
   color: black;
-  font-size: 22px;
+  /* font-size: 22px; */
   text-shadow: rgb(230, 110, 19) 1px 0 10px;
 }
   
@@ -222,7 +222,7 @@ main {
 
 .li3 a:hover{
   color: black;
-  font-size: 22px;
+  /* font-size: 22px; */
   text-shadow: rgb(230, 110, 19) 1px 0 10px;
 }
   
@@ -254,6 +254,6 @@ main {
 
   #btn:hover{
     color: black;
-  font-size: 22px;
+  /* font-size: 22px; */
   text-shadow: rgb(230, 110, 19) 1px 0 10px;
   }
