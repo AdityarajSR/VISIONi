@@ -79,6 +79,7 @@ main {
 }
 
 .sidebar_ a{
+  margin: 4px;
   color: white;
   font-size: 17px;
   font-family: 'Barlow', sans-serif;
@@ -256,4 +257,89 @@ main {
     color: black;
   /* font-size: 22px; */
   text-shadow: rgb(230, 110, 19) 1px 0 10px;
+  }
+
+#main_heading{
+  color: white;
+  text-shadow: 2.5px 2.5px 4px rgb(10, 28, 119);
+  text-align: center;
+  padding-top: 10px;
+  font-weight: bold;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+#ek{
+  background-image: url("/image/main.png");
+  opacity: 0.3;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 10px;
+  height: 50%;
+  /* margin-top: -150px; */
+}
+
+  #main_id{
+    margin-top: 10px;
+    font-style: italic;
+    color: black;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: 0.5px 0.5px 1px black;
+  }
+
+
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+
+  .waviy {
+    position: relative;
+  }
+  .waviy span {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    display: inline-block;
+    font-size: 40px;
+    color: #fff;
+    /* text-transform: uppercase; */
+    animation: flip 2s infinite;
+    animation-delay: calc(.2s * var(--i))
+  }
+  @keyframes flip {
+    0%,80% {
+      transform: rotateY(360deg) 
+    }
+  }
+
+  #take{
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    padding: 5px;
+    font-style: italic;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 15px;
+    text-decoration: none;
   }

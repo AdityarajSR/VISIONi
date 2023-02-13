@@ -15,6 +15,7 @@ function getDb() {
   if (!database) {
     throw { message: 'You must connect first!' };
   }
+  // console.log("Mongoose server up and running for users");
   return database;
 }
 

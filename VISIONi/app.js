@@ -36,8 +36,8 @@ const harroute = require("./routes/harroute");
 const demoRoutes = require("./routes/demo");
 const articleRouter = require('./routes/articles');
 const schemeRouter = require('./routes/schemes');
+const questionRouter = require('./routes/questions');
 const Article = require('./data/article')
-// const articleRoutes = require("./routes/articles")
 
 app.set("views", path.join(__dirname, "views"));
 // console.log(path.join(__dirname, "views"));
@@ -61,6 +61,7 @@ app.use("/", tracroute);
 app.use("/", harroute);
 app.use('/articles', articleRouter);
 app.use('/schemes', schemeRouter);
+app.use('/questions', questionRouter);
 // app.use("/",articleRoutes);
 
 
@@ -78,7 +79,7 @@ app.use('/schemes', schemeRouter);
 try {
   mongouri="mongodb+srv://CONNECtIt:CONNECtIt@cluster0.jzll7mx.mongodb.net/?retryWrites=true&w=majority";
   mongoose.connect( mongouri, ()=>{
-      console.log("mongoose server up and running")
+      console.log("mongoose server up and running for Ques/Ans")
   })
   
 } catch (error) {
@@ -139,17 +140,9 @@ app.get("/blogpost/:Postid" , (req, res) => {
   });
 });
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
-
-// 
+ 
 db.connectToDatabase().then(function () {
   app.listen(3000);
 });
+
+

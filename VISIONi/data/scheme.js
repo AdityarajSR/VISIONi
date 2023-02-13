@@ -11,7 +11,7 @@ try {
   mongouri =
     "mongodb+srv://CONNECtIt:CONNECtIt@cluster0.jzll7mx.mongodb.net/?retryWrites=true&w=majority";
   mongoose.connect(mongouri, () => {
-    console.log("mongoose server up and runningfor blogs");
+    console.log("mongoose server up and running for schemes");
   });
 } catch (error) {
   console.log(error);

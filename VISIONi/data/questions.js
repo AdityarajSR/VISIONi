@@ -11,7 +11,7 @@ try {
   mongouri =
     "mongodb+srv://CONNECtIt:CONNECtIt@cluster0.jzll7mx.mongodb.net/?retryWrites=true&w=majority";
   mongoose.connect(mongouri, () => {
-    console.log("mongoose server up and running for blogs");
+    console.log("mongoose server up and running for UserQustions");
   });
 } catch (error) {
   console.log(error);
@@ -56,4 +56,4 @@ articleSchema.pre("validate", function (next) {
   next()
 });
 
-module.exports = mongoose.model("MeraNayaTest", articleSchema);
+module.exports = mongoose.model("Question_Schema", articleSchema);
