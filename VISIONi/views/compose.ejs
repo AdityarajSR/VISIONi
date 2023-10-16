@@ -1,0 +1,32 @@
+<html lang="en">
+  <head>
+    <%- include('include/headdata') %>
+    <!-- <link rel="stylesheet" href="/styles/addtractor.css" /> -->
+    <link rel="stylesheet" href="/styles/shared.css" />
+  </head>
+
+  <body>
+
+
+<%- include('include/header') %>
+
+    <form  id="frm" action="/compose" method="post">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Title</label>
+            <input type="text" name="title" class="form-control" id="exampleFormControlInput1" >
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Post</label>
+            <textarea name="content" class="form-control" id="exampleFormControlTextarea1" rows="3" ></textarea>
+          </div>
+    
+          <button  name="button" class="btn btn-primary"  id="blue" type="submit" >Publish</button>
+
+    </form>
+
+
+  </body>
+</html>
+
+
+
